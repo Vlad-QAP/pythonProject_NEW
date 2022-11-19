@@ -33,6 +33,8 @@ def binary_search(array, elem, low, high):
     elif array[middle] == elem[0]:
         return f'Номер позиции элемента, который меньше введенного числа: {middle - 1}\n'\
                f'Номер позиции элемента, который больше или равен введенному числу: {middle}'
+    elif min(array) > elem[0] > max(array): # не работает, надо разобраться почему
+        return f'Число не удовлетворяет условию'
     elif array[middle] > elem[0]:
         return binary_search(array, elem, low, middle - 1)
     else:
